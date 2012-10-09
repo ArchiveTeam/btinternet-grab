@@ -74,7 +74,7 @@ pipeline = Pipeline(
       "-r", "-l", "inf", "--no-remove-listing",
       "--no-parent",
       "--lua-script", "stats.lua",
-      "--reject-regex", "\\.html?/",
+      "--reject-regex", "\\.html?/|cgi-bin/counter",
       "--timeout", "30",
       "--tries", "10",
       "--waitretry", "5",
