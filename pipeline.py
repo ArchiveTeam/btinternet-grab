@@ -95,7 +95,7 @@ pipeline = Pipeline(
     }
   ),
   MoveFiles(),
-  LimitConcurrent(1,
+  LimitConcurrent(NumberConfigValue(min=1, max=4, default="1", name="shared:rsync_threads", title="Rsync threads", description="The maximum number of concurrent uploads."),
     RsyncUpload(
       target = ConfigInterpolation("fos.textfiles.com::alardland/warrior/btinternet/%s/", downloader),
       target_source_path = ItemInterpolation("%(data_dir)s/"),
