@@ -97,7 +97,7 @@ pipeline = Pipeline(
   MoveFiles(),
   LimitConcurrent(1,
     RsyncUpload(
-      target = ConfigInterpolation("fos.textfiles.com::btinternet/%s/", downloader),
+      target = ConfigInterpolation("fos.textfiles.com::alardland/warrior/btinternet/%s/", downloader),
       target_source_path = ItemInterpolation("%(data_dir)s/"),
       files = [
         ItemInterpolation("%(warc_file_base)s.warc.gz")
